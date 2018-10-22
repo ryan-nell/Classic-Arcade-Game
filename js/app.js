@@ -56,9 +56,14 @@ class Character{
 }
 
 // Now instantiate your objects.
-
 // Place all enemy objects in an array called allEnemies
+const enemy = new Enemy();
+const allEnemies = [];
+allEnemies.push(enemy);
+
 // Place the player object in a variable called player
+const player = new Character();
+
 
 
 
