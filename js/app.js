@@ -31,11 +31,13 @@ class Enemy  {
 class Character{
   constructor(){
     this.sideways = 83;
-    this.forward = 101
-    this.x = this.sideways * 2.5;
-    this.y = this.forward * 4.5;
+    this.forward = 101;
+    this.startX =  this.sideways * 2.5;
+    this.startY = (this.forward * 4.5) - 40 ;
+    this.x = this. startX;
+    this.y = this.startY;
     this.sprite = 'images/char-boy.png';
-    this.reset = 0
+    this.reset = 0;
   }
   // Update Players position
   update(dt){
@@ -49,16 +51,24 @@ class Character{
   handleInput(input){
     switch(input){
         case 'left':
+          if(this.x > 0){
             this.x -= this.sideways;
+          }
           break;
         case 'right':
+          if(this.x < this.sideways * 4 ){
             this.x += this.sideways;
+          }
           break;
         case 'up':
-            this.y -= this.sideways;
+          if(this.y > this.forward ){
+            this.y -= this.forward;
+          }
           break;
         case 'down':
-            this.y += this.sideways;
+            if(this.y < this.forward * 4){
+              this.y += this.sideways;
+            }
           break;
     }
   }
