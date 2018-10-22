@@ -47,7 +47,20 @@ class Character{
   }
   // Update players coordinates according to key press
   handleInput(input){
-
+    switch(input){
+        case 'left':
+            this.x -= this.sideways;
+          break;
+        case 'right':
+            this.x += this.sideways;
+          break;
+        case 'up':
+            this.y -= this.sideways;
+          break;
+        case 'down':
+            this.y += this.sideways;
+          break;
+    }
   }
   // Set players postion to default starting point
   resetPlayer(){
@@ -63,9 +76,6 @@ allEnemies.push(enemy);
 
 // Place the player object in a variable called player
 const player = new Character();
-
-
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
