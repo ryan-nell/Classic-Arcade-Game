@@ -13,7 +13,7 @@ class Enemy {
   // Update the enemy's position, required method for game
   // Parameter: dt, a time delta between ticks
   update(dt) {
-    // Check if enemies position is within the boundries and update its postion using speed and dt
+    // Check if enemies position is within the boundaries and update its postion using speed and dt
     // which will ensure the game runs at the same speed for
     if(this.x < this.boundry){
       this.x += this.speed * dt;
@@ -76,7 +76,7 @@ class Character {
   // Function to handle keypress
   handleInput(input){
     // Switch statement to alter the players movement according to each key presses
-    // Conditional on each case to create boundries i.e prevent player from moving offscreen
+    // Conditional on each case to create boundaries i.e prevent player from moving offscreen
     switch (input) {
       case 'left':
         if(this.x > 0 ) {
